@@ -1,0 +1,23 @@
+nav {
+  padding: 10px;
+  position: absolute;
+  height: 100vh;
+  background: blue;
+  right: 0px;
+  top: 0;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  background-color: rgb(255, 213, 130);
+  text-align: right;
+  border-left: 7px solid #fdf5e6;
+  opacity: .9;
+}
+
+.nav-hidden {
+  right: -120px;
+}
+
+li {
+  list-style: none;
+  margin: 10px;
+}

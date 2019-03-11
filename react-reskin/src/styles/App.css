@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Economica:400,700');
+
+
+body {
+  font-family: 'Economica', sans-serif;
+  height: 100%;
+  background: lavender;
+  color: #043349;
+  text-shadow: 0 0 5px rgba(21,62,123,.55);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
