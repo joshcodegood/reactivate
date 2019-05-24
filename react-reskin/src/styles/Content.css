@@ -7,3 +7,34 @@ main {
 h1 {
   font-weight: bold;
 }
+
+#menu-toggle {
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background-color: #fdf5e6;
+  box-shadow: inset 0 0 5px rgba(21,62,123,.87);
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px;
+  transition: background .25s ease-out,border-radius .25s ease-out,width .25s ease-out;
+}
+
+/* #close-nav {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background-color: #fdf5e6;
+  box-shadow: inset 0 0 5px rgba(21,62,123,.87);
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px;
+  transition: background .25s ease-out,border-radius .25s ease-out,width .25s ease-out;
+} */
+
+#menu-toggle.active {
+  display: block;
+}
