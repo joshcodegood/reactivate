@@ -2,32 +2,22 @@ import React from "react";
 import "../styles/Content.css";
 
 class Content extends React.Component {
-  state = { menuClass: "" };
-
-  componentDidMount() {
-    if (this.props.navHider === true) {
-      this.setState({ menuClass: "active" });
-    }
-  }
 
   toggleClass = event => {
     console.log("menu button toggled");
-    if (this.props.navHider === true) {
-      this.setState({ menuClass: "" });
-      this.props.isHidden(false);
-    }
+    this.props.mainIsShown ? this.props.contentUpdate(false) : this.props.contentUpdate(true)
   };
 
   render() {
     return (
       <main>
-        <span
+        <div
           id="menu-toggle"
           onClick={this.toggleClass}
-          className={this.state.menuClass}
+          className={this.props.className}
         >
-          MENU
-        </span>
+          {this.props.value}
+        </div>
         <h1>johnnyk</h1>
         <p>My name is Johnny karate</p>
         <p>AKA Burt Macklin</p>

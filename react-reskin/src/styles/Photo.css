@@ -13,3 +13,9 @@ img {
   right: 0;
   bottom: 0;
 }
+
+@media screen and (max-width: 500px) {
+  img {
+    height: 275px;
+  }
+}

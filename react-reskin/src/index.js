@@ -7,48 +7,26 @@ import Content from "./components/Content";
 import Footer from "./components/Footer";
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = { status: "active" }
-  // }
   state = { navHidden: true };
 
-
-  navRef = React.createRef();
-  contentRef = React.createRef();
-
-  // updateHandler = event => {
-  //   this.navRef.current.toggleClass();
-  //   this.contentRef.current.toggleClass();
-  // }
-
-  hideProvide = navStatus => {
-    console.log(navStatus);
-    this.setState({ navHidden: navStatus }, 
-      
-      e => {
-      this.navRef.current.toggleClass();
-      this.contentRef.current.toggleClass();
-    });
+  updateyMcgee = navStatus => {
+    this.setState({ navHidden: navStatus });
   };
-
-  toggleNav = event => {
-    this.navHidden ? "active" : "inactive"
-  }
 
   render() {
     return (
       <div id="page">
         <NavMenu
-          ref={this.navRef}
-          navHide={this.state.navHidden}
-          hidey={this.hideProvide}
+          className={this.state.navHidden ? "" : "active"}
+          navIsHidden={this.state.navHidden}
+          navUpdate={this.updateyMcgee}
         />
         <Photo />
         <Content
-          ref={this.contentRef}
-          isHidden={this.hideProvide}
-          navHider={this.state.navHidden}
+          className={this.state.navHidden ? "active" : ""}
+          value={this.state.navHidden ? "menu" : "x"}
+          contentUpdate={this.updateyMcgee}
+          mainIsShown={this.state.navHidden}
         />
         <Footer />
       </div>

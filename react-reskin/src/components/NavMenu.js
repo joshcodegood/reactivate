@@ -2,63 +2,29 @@ import React, { Component } from "react";
 import "../styles/NavMenu.css";
 
 class NavMenu extends Component {
-  state = { menuClass: "" };
-
-  componentDidMount() {
-    // if (this.props.navHide === true) {
-    //   console.log("menuClass is true");
-    //   this.setState({ menuClass: "" });
-    // } else {
-    //   this.setState({ menuClass: "active" });
-    // }
-    this.toggleClass();
-  }
-
   toggleClass = event => {
     console.log("nav menu toggled");
-    // !this.props.navHide && this.state.menuClass === ""
-    //   ? this.setState({ menuClass: "active" })
-    //   : this.setState({ menuClass: "" });
-      
-    // // console.log(`in navMenu, parent state is: ${this.props.navHide}`);
-    if (!this.props.navHide && this.state.menuClass === "") {
-      console.log('a');
-      return this.setState({ menuClass: "active" });
-    } else {
-      console.log('b')
-      this.setState({menuClass: ""})
-      return this.props.hidey(true);
-    }
-    // if (this.props.navHide === false && this.state.menuClass === "active") {
-    //   console.log('b');
-    //   this.setState({ menuClass: "" });
-    //   return this.props.hidey(true);
-    // }
-
-    // if (this.props.navHide === true && this.state.menuClass === "active") {
-    //   console.log('c');
-    //   return this.setState({ menuClass: ""})
-    // }
-    // else {
-    //   this.setState({ menuClass: "" });
-    //   this.props.hidey(true);
-    // }
+    this.props.navIsHidden
+      ? this.props.navUpdate(false)
+      : this.props.navUpdate(true);
   };
 
   render() {
     return (
-      <nav className={this.state.menuClass}>
-        <span
-          id="close"
-          onClick={this.toggleClass}
-          className={this.state.menuClass}
-        >
-          X
-        </span>
+      <nav className={this.props.className}>
         <ul>
-          <li>Home</li>
-          <li>Give me money</li>
-          <li>{this.props.navHide}</li>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a
+              href="https://cash.app/$ogjlaw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Give me money
+            </a>
+          </li>
         </ul>
       </nav>
     );
